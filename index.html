@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Histórias do Caldeira — histórias em quadrinhos, personagens, fotos e aventuras.">
+  <title>Histórias do Caldeira</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Histórias do Caldeira">
+      <span class="brand-mark">HC</span>
+      <span>Histórias do Caldeira</span>
+    </a>
+    <nav class="nav" id="mainNav">
+      <a href="#inicio">Início</a>
+      <a href="#historias">Histórias</a>
+      <a href="#series">Séries</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+    <button class="menu-button" id="menuButton" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow">QUADRINHOS • FOTOS • AVENTURAS</p>
+        <h1>Histórias do<br><span>Caldeira</span></h1>
+        <p class="hero-copy">Um espaço para reunir personagens, quadrinhos e histórias criadas para ganhar vida página por página.</p>
+        <a class="button primary" href="#historias">Ler histórias <span>→</span></a>
+      </div>
+      <div class="hero-character" aria-label="Ilustração decorativa do Texugo Norris">
+        <div class="moon"></div>
+        <div class="badger">🦡</div>
+        <div class="couch"></div>
+        <div class="tv"></div>
+      </div>
+    </section>
+
+    <section class="section stats-strip" aria-label="Estatísticas do site">
+      <div><strong id="siteVisitors">0</strong><span>visitantes deste dispositivo</span></div>
+      <div><strong id="siteViews">0</strong><span>leituras registradas</span></div>
+      <div><strong id="siteAvg">0 min</strong><span>tempo médio nesta sessão</span></div>
+    </section>
+
+    <section class="section" id="historias">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EM DESTAQUE</p>
+          <h2>Últimas histórias</h2>
+        </div>
+        <span class="section-note">Escolha uma história para abrir o leitor.</span>
+      </div>
+      <div class="cards" id="storyCards"></div>
+    </section>
+
+    <section class="section" id="series">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">UNIVERSOS</p>
+          <h2>Séries em destaque</h2>
+        </div>
+      </div>
+      <div class="series-grid">
+        <article class="series-card norris">
+          <span class="series-icon">🦡</span>
+          <h3>Texugo Norris</h3>
+          <p>Um texugo de personalidade forte, aventuras improváveis e muito sarcasmo.</p>
+        </article>
+        <article class="series-card leo">
+          <span class="series-icon">🐊</span>
+          <h3>Jacaré Léo</h3>
+          <p>Histórias à beira do rio, encontros inesperados e personagens marcantes.</p>
+        </article>
+        <article class="series-card hive">
+          <span class="series-icon">🐝</span>
+          <h3>A Colmeia do Rio</h3>
+          <p>Pequenos personagens, grandes acontecimentos e muita confusão.</p>
+        </article>
+        <article class="series-card asteroid">
+          <span class="series-icon">☄️</span>
+          <h3>O Asteroide</h3>
+          <p>Quando o céu deixa de ser apenas parte da paisagem.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="fotos">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">GALERIA</p>
+          <h2>Fotos</h2>
+        </div>
+        <span class="section-note">Espaço preparado para suas fotos.</span>
+      </div>
+      <div class="photo-grid">
+        <div class="photo p1">Pôr do sol</div>
+        <div class="photo p2">Natureza</div>
+        <div class="photo p3">Rio</div>
+        <div class="photo p4">Personagens</div>
+        <div class="photo p5">Paisagens</div>
+        <div class="photo p6">Bastidores</div>
+      </div>
+    </section>
+
+    <section class="section about" id="sobre">
+      <div>
+        <p class="eyebrow">SOBRE O PROJETO</p>
+        <h2>Histórias feitas para continuar.</h2>
+      </div>
+      <p>Este é o primeiro modelo funcional do Histórias do Caldeira. O site foi pensado para receber novas HQs, capítulos, fotos e personagens ao longo do tempo — funcionando bem no celular e no computador.</p>
+    </section>
+
+    <section class="section private-stats" id="estatisticas">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PAINEL LOCAL</p>
+          <h2>Estatísticas desta cópia</h2>
+        </div>
+        <button class="button small" id="resetStats">Zerar estatísticas</button>
+      </div>
+      <p class="muted">Nesta primeira versão, as estatísticas são armazenadas no navegador. Quando o site for publicado, podemos trocar isso por estatísticas globais reais.</p>
+      <div id="statsTable" class="stats-table"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>Histórias do Caldeira</strong><span>© <span id="year"></span></span></div>
+    <span>Grandes histórias começam com boas ideias. 🐾</span>
+  </footer>
+
+  <div class="reader" id="reader" aria-hidden="true">
+    <div class="reader-top">
+      <div>
+        <span class="eyebrow" id="readerSeries">HISTÓRIA</span>
+        <h2 id="readerTitle">Título</h2>
+      </div>
+      <button class="close-reader" id="closeReader" aria-label="Fechar leitor">×</button>
+    </div>
+    <div class="reader-pages" id="readerPages"></div>
+    <div class="reader-bottom">
+      <button class="button small" id="prevPage">← Anterior</button>
+      <span id="pageCounter">1 / 1</span>
+      <button class="button small" id="nextPage">Próxima →</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
